@@ -4,7 +4,7 @@ Modified for headless plugin build for [Elk Audio OS](https://elk.audio)
 
 ## Building Instructions
 
-1. Open the ´.jucer´ file with the projucer.
+1. Open `OB-Xd.jucer` with the projucer.
 2. Enter the path to the VST2 SDK in the field "VST (LEGACY) SDK Folder" in the exporters menu and save to generate the Linux Makefile.
 3. Navigate to the folder `OB-Xd/Builds/LinuxMakefile/`.
 4. Set up the cross-compilation toolchain with:  
@@ -20,7 +20,7 @@ Modified for headless plugin build for [Elk Audio OS](https://elk.audio)
    $ export CXXFLAGS="-O3 -pipe -ffast-math -felimnate-unused-debug-types"
    ```
 
-6. Finally cross compile the plugin using  
+6. Finally cross compile the plugin using:  
 
    ```bash
    $ AR=aarch64-elk-linux-gcc-ar make CONFIG=Release CFLAGS="-DJUCE_HEADLESS_PLUGIN_CLIENT=1" V=1 TARGET_ARCH="-march=armv8-a -mtune=cortex-a72"
